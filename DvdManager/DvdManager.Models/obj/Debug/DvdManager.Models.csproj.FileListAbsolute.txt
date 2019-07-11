@@ -1,0 +1,7 @@
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Models\obj\Debug\DvdManager.Models.csprojAssemblyReference.cache
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Models\obj\Debug\DvdManager.Models.csproj.CoreCompileInputs.cache
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Models\bin\Debug\DvdManager.Models.dll.config
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Models\bin\Debug\DvdManager.Models.dll
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Models\bin\Debug\DvdManager.Models.pdb
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Models\obj\Debug\DvdManager.Models.dll
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Models\obj\Debug\DvdManager.Models.pdb

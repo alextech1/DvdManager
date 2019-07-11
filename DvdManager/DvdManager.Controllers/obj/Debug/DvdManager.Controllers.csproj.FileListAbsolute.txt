@@ -1,0 +1,17 @@
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Controllers\obj\Debug\DvdManager.Controllers.csprojAssemblyReference.cache
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Controllers\obj\Debug\DvdManager.Controllers.csproj.CoreCompileInputs.cache
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Controllers\bin\Debug\DvdManager.Controllers.dll.config
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Controllers\bin\Debug\DvdManager.Controllers.dll
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Controllers\bin\Debug\DvdManager.Controllers.pdb
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Controllers\bin\Debug\DvdManager.Data.dll
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Controllers\bin\Debug\DvdManager.Models.dll
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Controllers\bin\Debug\DvdManager.Data.pdb
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Controllers\bin\Debug\DvdManager.Data.dll.config
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Controllers\bin\Debug\DvdManager.Models.pdb
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Controllers\bin\Debug\DvdManager.Models.dll.config
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Controllers\obj\Debug\DvdManager.Controllers.csproj.CopyComplete
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Controllers\obj\Debug\DvdManager.Controllers.dll
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Controllers\obj\Debug\DvdManager.Controllers.pdb
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Controllers\bin\Debug\DvdManager.View.dll
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Controllers\bin\Debug\DvdManager.View.pdb
+C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.Controllers\bin\Debug\DvdManager.View.dll.config
