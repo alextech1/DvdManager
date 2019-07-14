@@ -27,8 +27,9 @@ namespace DvdManager.View
             Console.WriteLine("Press 1 to add movie");
             Console.WriteLine("Press 2 to display movies");
             Console.WriteLine("Press 3 to find by ID");
-            Console.WriteLine("Press 4 to remove DVD");
-            Console.WriteLine("Press 5 to edit movie");
+            Console.WriteLine("Press 4 to edit movie");
+            Console.WriteLine("Press 5 to remove DVD");
+
             input = Console.ReadLine();
 
             if (int.TryParse(input, out choice))
@@ -36,23 +37,20 @@ namespace DvdManager.View
                 switch (choice)
                 {
                     case 1:
-                        break;
+                        break;                        
                     case 2:
                         break;
                     case 3:
                         break;
                     case 4:
                         break;
-                    case 5:                        
+                    case 5:
                         break;
                     default:
                         break;
                 }
-                
             }
             return choice;
-
-
         }
 
         public Dvd GetNewDvdInfo()
@@ -60,10 +58,9 @@ namespace DvdManager.View
             string inputReleaseYear;
             string inputRating;
 
-            int id = 3;
-            string readTitle;            
+            string readTitle;
             int readReleaseYear;
-            string readDirector;            
+            string readDirector;
             float readRating;
 
             Console.WriteLine("What is the Title of the DVD?");
@@ -80,31 +77,26 @@ namespace DvdManager.View
             inputRating = Console.ReadLine();
             float.TryParse(inputRating, out readRating);
 
-            
-            var dvd = new Dvd(id, readTitle, readReleaseYear, readDirector, readRating);
+            var dvd = new Dvd(readTitle, readReleaseYear, readDirector, readRating);
             return dvd;
         }
 
         public void DisplayDvd(Dvd dvd)
         {
-
+            Console.WriteLine("Here is your DVD:");
+            Console.WriteLine("DVD[Id: {0}; Title: {1}; ReleaseYear: {2}; Director: {3}; Rating: {4}]",
+                dvd.Id, dvd.Title, dvd.ReleaseYear, dvd.Director, dvd.Rating);            
         }
 
         public Dvd EditDvdInfo(Dvd dvd)
         {
             string inputReleaseYear;
             string inputRating;
-            string inputId;
 
-            int readId;
             string readTitle;
             int readReleaseYear;
             string readDirector;
             float readRating;
-
-            Console.WriteLine("What is the Id of the movie to edit?");
-            inputId = Console.ReadLine();
-            int.TryParse(inputId, out readId);
 
             Console.WriteLine("What is the new Title of the DVD?");
             readTitle = Console.ReadLine();
@@ -120,8 +112,9 @@ namespace DvdManager.View
             inputRating = Console.ReadLine();
             float.TryParse(inputRating, out readRating);
 
-            dvd = new Dvd(readId, readTitle, readReleaseYear, readDirector, readRating);
+            dvd = new Dvd(readTitle, readReleaseYear, readDirector, readRating);
             return dvd;
+
         }
 
         public int SearchDvd()
@@ -143,9 +136,9 @@ namespace DvdManager.View
             bool confirm = false;
             Console.WriteLine("Are you sure you want to remove this dvd? Type: y/n");
             input = Console.ReadLine();
-            if (input == "y")
+            if (input == "y" || input == "Y")
                 confirm = true;
-            else if (input == "n")
+            else if (input == "n" || input == "N")
                 confirm = false;
             else
                 confirm = false;

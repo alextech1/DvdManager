@@ -9,3 +9,14 @@ C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.View\obj\Debug\DvdM
 C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.View\obj\Debug\DvdManager.View.csproj.CopyComplete
 C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.View\obj\Debug\DvdManager.View.dll
 C:\Users\cashamerica12345\Source\Repos\DvdManager\DvdManager.View\obj\Debug\DvdManager.View.pdb
+C:\Users\cashamerica12345\Source\Repos\DvdManager Folder\DvdManager\DvdManager.View\bin\Debug\DvdManager.View.dll.config
+C:\Users\cashamerica12345\Source\Repos\DvdManager Folder\DvdManager\DvdManager.View\bin\Debug\DvdManager.View.dll
+C:\Users\cashamerica12345\Source\Repos\DvdManager Folder\DvdManager\DvdManager.View\bin\Debug\DvdManager.View.pdb
+C:\Users\cashamerica12345\Source\Repos\DvdManager Folder\DvdManager\DvdManager.View\bin\Debug\DvdManager.Models.dll
+C:\Users\cashamerica12345\Source\Repos\DvdManager Folder\DvdManager\DvdManager.View\bin\Debug\DvdManager.Models.pdb
+C:\Users\cashamerica12345\Source\Repos\DvdManager Folder\DvdManager\DvdManager.View\bin\Debug\DvdManager.Models.dll.config
+C:\Users\cashamerica12345\Source\Repos\DvdManager Folder\DvdManager\DvdManager.View\obj\Debug\DvdManager.View.csprojAssemblyReference.cache
+C:\Users\cashamerica12345\Source\Repos\DvdManager Folder\DvdManager\DvdManager.View\obj\Debug\DvdManager.View.csproj.CoreCompileInputs.cache
+C:\Users\cashamerica12345\Source\Repos\DvdManager Folder\DvdManager\DvdManager.View\obj\Debug\DvdManager.View.csproj.CopyComplete
+C:\Users\cashamerica12345\Source\Repos\DvdManager Folder\DvdManager\DvdManager.View\obj\Debug\DvdManager.View.dll
+C:\Users\cashamerica12345\Source\Repos\DvdManager Folder\DvdManager\DvdManager.View\obj\Debug\DvdManager.View.pdb

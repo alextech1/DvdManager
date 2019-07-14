@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 //TO DO: 
@@ -16,16 +17,17 @@ namespace DvdManager.Models
 {
     public class Dvd
     {
-        public Dvd(int id, string title, int releaseyear, string director, float rating)
+        public Dvd(string title, int releaseyear, string director, float rating)
         {
-            Id = id;
+            Id = Interlocked.Increment(ref globalId);
             Title = title;
             ReleaseYear = releaseyear;
             Director = director;
             Rating = rating;
         }
 
-        public int Id { get; }
+        public static int globalId;
+        public int Id { get; private set; }
         public string Title { get; set; }
         public int ReleaseYear { get; set; }
         public string Director { get; set; }
