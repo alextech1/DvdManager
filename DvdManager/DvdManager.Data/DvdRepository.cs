@@ -9,10 +9,22 @@ namespace DvdManager.Data
 {
     public class DvdRepository
     {
-        private static List<Dvd> dvds = new List<Dvd>();
+        private static List<Dvd> dvds = new List<Dvd>()
+        {
+            new Dvd("Batman", 2010, "Bruce", 4 ),
+            new Dvd("Superman", 2009, "John", 4),
+            new Dvd("Wonderwoman", 2012, "Omar", 4)
+        };
         public Dvd Create(Dvd dvd)
         {
-            dvds.Add(dvd);
+            if (dvds.Any(x => x.Title == dvd.Title))
+            {
+                return null;
+            }
+            
+            else
+                dvds.Add(dvd);
+
             return dvds.FirstOrDefault(d => d.Id == dvd.Id);
         }
         public List<Dvd> ReadAll()

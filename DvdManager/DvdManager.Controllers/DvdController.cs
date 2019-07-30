@@ -25,12 +25,6 @@ namespace DvdManager.Controllers
 
         public void Run() //TO DO: use while loop
         {
-            List<Dvd> Dvds = _dvds.ReadAll();
-
-            Dvds.Add(new Dvd("Batman", 2010, "Bruce", 4));
-            Dvds.Add(new Dvd("Superman", 2009, "John", 4));
-            Dvds.Add(new Dvd("Wonderwoman", 2012, "Omar", 4));
-
             Console.WriteLine("Welcome To Dvd Manager");
 
             bool inChoice = false;
@@ -42,78 +36,61 @@ namespace DvdManager.Controllers
 
                 if (pass == 1)
                 {
+                    
                     inChoice = true;
-                    string readKey;
                     CreateDvd();
-                    Console.WriteLine("Press b to go back.");
-                    readKey = Console.ReadLine();
-                    if (readKey == "b")
-                        inChoice = false;
-                    else
-                        inChoice = true;
+                    Console.WriteLine("Press any key to go back.");
+                    Console.ReadKey();
+                    inChoice = false;
                 }
                 else if (pass == 2)
                 {
                     inChoice = true;
-                    string readKey;
                     DisplayDvds();
-                    Console.WriteLine("Press b to go back.");
-                    readKey = Console.ReadLine();
-                    if (readKey == "b")
-                        inChoice = false;
-                    else
-                        inChoice = true;
+                    Console.WriteLine("Press any key to go back.");
+                    Console.ReadKey();
+                    inChoice = false;
                 }
                 else if (pass == 3)
                 {
                     inChoice = true;
-                    string readKey2;
                     SearchDvds();
-                    Console.WriteLine("Press b to go back.");
-                    readKey2 = Console.ReadLine();
-                    if (readKey2 == "b")
-                        inChoice = false;
-                    else
-                        inChoice = true;
+                    Console.WriteLine("Press any key to go back.");
+                    Console.ReadKey();
+                    inChoice = false;
                 }
                 else if (pass == 4)
                 {
                     inChoice = true;
-                    string readKey3;
                     var myEditId = new DvdView();
                     var myId = myEditId.SearchDvd();
                     var id = _dvds.ReadById(myId); //search in list repo
 
-                    if (Dvds.Contains(id) == false)
-                        Console.WriteLine("Not in list");
+                    if (id == null)
+                    {
+                        Console.WriteLine("Not in list.");
+                    }
                     else
                     {
-                        var getDvd = view.EditDvdInfo(Dvds[myId]);
+                        var getDvd = view.EditDvdInfo(id);
                         EditDvd(myId, getDvd);
                     }
-
-                    Console.WriteLine("Press b to go back.");
-                    readKey3 = Console.ReadLine();
-                    if (readKey3 == "b")
-                        inChoice = false;
-                    else
-                        inChoice = true;
+                    Console.WriteLine("Press any key to go back.");
+                    Console.ReadKey();
+                    inChoice = false;
                 }
                 else if (pass == 5)
                 {
                     inChoice = true;
-                    string readKey;
                     RemoveDvd();
-                    Console.WriteLine("Press b to go back.");
-                    readKey = Console.ReadLine();
-                    if (readKey == "b")
-                        inChoice = false;
-                    else
-                        inChoice = true;
-                }
+                    Console.WriteLine("Press any key to go back.");
+                    Console.ReadKey();
+                    inChoice = false;
+                } 
                 else
                 {
-                    Console.WriteLine("Invalid.");
+                    Console.WriteLine("Invalid input.");
+                    Console.ReadKey();
                 }
             }
         }
@@ -122,15 +99,11 @@ namespace DvdManager.Controllers
         {
             var myView = new DvdView();
             var dvdInfos = myView.GetNewDvdInfo();
+            var createDvd = _dvds.Create(dvdInfos);
 
-            List<Dvd> Dvds = _dvds.ReadAll();
-
-            if (Dvds.Contains(dvdInfos) == true)
-                Console.WriteLine("Already in list");
-            else
-            {               
-                _dvds.Create(dvdInfos);
-                DisplayDvds();
+            if (createDvd == null)
+            {
+                Console.WriteLine("Already in list.");
             }
         }
 
@@ -148,51 +121,45 @@ namespace DvdManager.Controllers
         {
             var myIdView = new DvdView();
             var myId = myIdView.SearchDvd();
-
-            List<Dvd> Dvds = _dvds.ReadAll();
-
             var id = _dvds.ReadById(myId);
 
-            if (Dvds.Contains(id) == false)
-                Console.WriteLine("Not in list");
-            else
+            if (id == null)
             {
-                myIdView.DisplayDvd(Dvds[myId]);
-                //Console.WriteLine(id);
+                Console.WriteLine("Not in list");
             }
+            else
+                myIdView.DisplayDvd(id);
+            //Console.WriteLine(id);
+
         }
 
         private void EditDvd(int id, Dvd dvd) //Update
         {
-            List<Dvd> Dvds = _dvds.ReadAll();
-
             _dvds.Update(id, dvd);
-
             DisplayDvds();
         }
 
         private void RemoveDvd() //Delete int id
         {
-            List<Dvd> Dvds = _dvds.ReadAll();
-
             var myRemoveId = new DvdView();
             var myId = myRemoveId.SearchDvd();
             var id = _dvds.ReadById(myId);
+            var confirmDel = myRemoveId.ConfirmRemoveDvd(id);
 
-            if (Dvds.Contains(id) == false)
+            if (id == null)
+            {
                 Console.WriteLine("Not in list");
+            }
             else
             {
-                var confirmDel = myRemoveId.ConfirmRemoveDvd(Dvds[myId]);
-
                 if (confirmDel == true)
                     _dvds.Delete(myId);
                 else
                     Console.WriteLine("Nothing removed.");
-
-                Console.WriteLine("Updated movie list:");
-                DisplayDvds();
             }
+
+            Console.WriteLine("Updated movie list:");
+            DisplayDvds();
         }
     }
 }

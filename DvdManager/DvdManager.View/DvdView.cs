@@ -18,6 +18,8 @@ namespace DvdManager.View
 {
     public class DvdView
     {
+        //public int getYear { get; set; }
+
         public int GetMenuChoice()
         {
             string input;
@@ -31,25 +33,8 @@ namespace DvdManager.View
             Console.WriteLine("Press 5 to remove DVD");
 
             input = Console.ReadLine();
+            int.TryParse(input, out choice);
 
-            if (int.TryParse(input, out choice))
-            {
-                switch (choice)
-                {
-                    case 1:
-                        break;                        
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 5:
-                        break;
-                    default:
-                        break;
-                }
-            }
             return choice;
         }
 
@@ -57,64 +42,115 @@ namespace DvdManager.View
         {
             string inputReleaseYear;
             string inputRating;
+            bool InputComplete = false;
 
             string readTitle;
             int readReleaseYear;
             string readDirector;
             float readRating;
 
-            Console.WriteLine("What is the Title of the DVD?");
-            readTitle = Console.ReadLine();
+            while (!InputComplete)
+            {
+                Console.WriteLine("What is the Title of the DVD?");
+                readTitle = Console.ReadLine();
 
-            Console.WriteLine("What is the Release Year of the DVD?");
-            inputReleaseYear = Console.ReadLine();
-            int.TryParse(inputReleaseYear, out readReleaseYear);
+                Console.WriteLine("What is the Release Year of the DVD?");
+                inputReleaseYear = Console.ReadLine();
+                if (!int.TryParse(inputReleaseYear, out readReleaseYear))
+                {
+                    InputComplete = false;
+                    Console.WriteLine("Invalid Input.");
+                    continue;
+                }
 
-            Console.WriteLine("Who is the Director of the DVD?");
-            readDirector = Console.ReadLine();
+                Console.WriteLine("Who is the Director of the DVD?");
+                readDirector = Console.ReadLine();
+                if (readDirector.ToCharArray().Any(char.IsDigit))
+                {
+                    InputComplete = false;
+                    Console.WriteLine("Invalid Input.");
+                    continue;
+                }
 
-            Console.WriteLine("What is the star rating of the DVD?");
-            inputRating = Console.ReadLine();
-            float.TryParse(inputRating, out readRating);
+                Console.WriteLine("What is the star rating of the DVD?");
+                inputRating = Console.ReadLine();
+                if (!float.TryParse(inputRating, out readRating))
+                {
+                    InputComplete = false;
+                    Console.WriteLine("Invalid Input.");
+                    continue;
+                }
 
-            var dvd = new Dvd(readTitle, readReleaseYear, readDirector, readRating);
-            return dvd;
+                InputComplete = true;
+                if (InputComplete == true)
+                {
+                    var dvd = new Dvd(readTitle, readReleaseYear, readDirector, readRating);
+                    return dvd;
+                }
+            }
+
+            return null;
         }
 
         public void DisplayDvd(Dvd dvd)
         {
             Console.WriteLine("Here is your DVD:");
             Console.WriteLine("DVD[Id: {0}; Title: {1}; ReleaseYear: {2}; Director: {3}; Rating: {4}]",
-                dvd.Id, dvd.Title, dvd.ReleaseYear, dvd.Director, dvd.Rating);            
+                dvd.Id, dvd.Title, dvd.ReleaseYear, dvd.Director, dvd.Rating);
         }
 
         public Dvd EditDvdInfo(Dvd dvd)
         {
             string inputReleaseYear;
             string inputRating;
+            bool InputComplete = false;
 
             string readTitle;
             int readReleaseYear;
             string readDirector;
             float readRating;
 
-            Console.WriteLine("What is the new Title of the DVD?");
-            readTitle = Console.ReadLine();
+            while (!InputComplete)
+            {
+                Console.WriteLine("What is the new Title of the DVD?");
+                readTitle = Console.ReadLine();
 
-            Console.WriteLine("What is the new Release Year of the DVD?");
-            inputReleaseYear = Console.ReadLine();
-            int.TryParse(inputReleaseYear, out readReleaseYear);
+                Console.WriteLine("What is the new Release Year of the DVD?");
+                inputReleaseYear = Console.ReadLine();
+                if (!int.TryParse(inputReleaseYear, out readReleaseYear))
+                {
+                    InputComplete = false;
+                    Console.WriteLine("Invalid Input.");
+                    continue;
+                }
 
-            Console.WriteLine("Who is the new Director of the DVD?");
-            readDirector = Console.ReadLine();
+                Console.WriteLine("Who is the new Director of the DVD?");
+                readDirector = Console.ReadLine();
+                if (readDirector.ToCharArray().Any(char.IsDigit))
+                {
+                    InputComplete = false;
+                    Console.WriteLine("Invalid Input.");
+                    continue;
+                }
 
-            Console.WriteLine("What is the new star rating of the DVD?");
-            inputRating = Console.ReadLine();
-            float.TryParse(inputRating, out readRating);
+                Console.WriteLine("What is the new star rating of the DVD?");
+                inputRating = Console.ReadLine();
+                if (!float.TryParse(inputRating, out readRating))
+                {
+                    InputComplete = false;
+                    Console.WriteLine("Invalid Input.");
+                    continue;
+                }
 
-            dvd = new Dvd(readTitle, readReleaseYear, readDirector, readRating);
+                InputComplete = true;
+                if (InputComplete == true)
+                {
+                    dvd = new Dvd(readTitle, readReleaseYear, readDirector, readRating);
+                    return dvd;
+                }
+            }
+
             return dvd;
-
         }
 
         public int SearchDvd()
